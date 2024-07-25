@@ -36,7 +36,7 @@ public class Main {
                 .map(car -> car.getKm())
                 .reduce((x,y) -> x +y);
 
-        System.out.println("Общий пробег: " + optional);
+        System.out.println("Общий пробег: " + optional.orElse(0));
 
  //2. Среди машин, у которых пробег более 500 000 найти самую старую
 
@@ -50,7 +50,7 @@ public class Main {
 
         Optional <Integer> max = carsList.stream()
                 .filter(car -> car.getBrand().startsWith("V"))
-                .filter(car -> car.getBrand().startsWith("V"))
+                .filter(car -> car.getBrand().startsWith("W"))
                 .filter(car -> car.getKm() <= 200_000)
                 .map(car -> car.getKm())
                 .max(Comparator.naturalOrder());

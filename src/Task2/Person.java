@@ -5,10 +5,15 @@ import java.util.Objects;
 //Создайте класс Person, у него будет три поля: имя, папа и мама. Папа и мама - тоже поля класса Person
 public class Person {
     private  String name;
-    private String mom;
-    private String dad;
 
-    public Person(String name, String mom, String dad) {
+    private Person mom;
+    private Person dad;
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public Person(String name, Person mom, Person dad) {
         this.name = name;
         this.mom = mom;
         this.dad = dad;
@@ -22,19 +27,19 @@ public class Person {
         this.name = name;
     }
 
-    public String getMom() {
+    public Person getMom() {
         return mom;
     }
 
-    public void setMom(String mom) {
+    public void setMom(Person mom) {
         this.mom = mom;
     }
 
-    public String getDad() {
+    public Person getDad() {
         return dad;
     }
 
-    public void setDad(String dad) {
+    public void setDad(Person dad) {
         this.dad = dad;
     }
 
@@ -54,8 +59,8 @@ public class Person {
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
-                ", mom='" + mom + '\'' +
-                ", dad='" + dad + '\'' +
+                ", mom=" + mom +
+                ", dad=" + dad +
                 '}';
     }
 }
